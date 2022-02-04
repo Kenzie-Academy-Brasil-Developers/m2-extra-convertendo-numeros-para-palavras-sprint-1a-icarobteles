@@ -93,14 +93,16 @@ main{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: baseline;
     align-items: center;
+    overflow: scroll;
 }
 
 main p{
     color: rgb(11, 11, 119);
     font-family: 'Source Code Pro', monospace;
     font-size: 1rem;
-    text-align: center;
+    text-align: justify;
     text-transform: capitalize;
+    width: 250px;
 }

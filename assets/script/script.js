@@ -1,20 +1,24 @@
 const arrayOfUnits = ["um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove"];
 
-const arrayOfExceptions = ["onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
+const arrayOfExceptions = ["dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
 
-const arrayOfTens = ["dez", "vinte"];
+const arrayOfTens = ["vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
 
 function numbersToWords(){
     let arr = [];
     for(let i = 0; i < arrayOfUnits.length; i++){
         arr.push(arrayOfUnits[i]);
     }
-    arrayOfTens[0][0] = arrayOfTens[0][0].toUpperCase();
-    arr.push(arrayOfTens[0]);
     for(let i = 0; i < arrayOfExceptions.length; i++){
         arr.push(arrayOfExceptions[i]);
     }
-    arr.push(arrayOfTens[1]);
+    for(let j = 0; j < arrayOfTens.length; j++){
+        arr.push(arrayOfTens[j]);
+        for(let i = 0; i < arrayOfUnits.length; i++){
+            arr.push(arrayOfTens[j] + " e " + arrayOfUnits[i]);
+        }
+    }
+    arr.push("cem");
     displaysTheNumbersOnThePage(arr);
     return arr;
 }
