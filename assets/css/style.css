@@ -103,6 +103,6 @@ main p{
     font-family: 'Source Code Pro', monospace;
     font-size: 1rem;
     text-align: justify;
-    text-transform: capitalize;
-    width: 250px;
+    
+    width: 400px;
 }
