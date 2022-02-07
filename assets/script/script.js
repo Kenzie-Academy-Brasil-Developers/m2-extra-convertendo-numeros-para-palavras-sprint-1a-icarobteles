@@ -4,7 +4,9 @@ const arrayOfExceptions = ["dez", "onze", "doze", "treze", "quatorze", "quinze",
 
 const arrayOfTens = ["vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa"];
 
-const arrayOfHundreds = ["cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"]
+const arrayOfHundreds = ["cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seiscentos", "setecentos", "oitocentos", "novecentos"];
+
+let inputDate;
 
 function numbersToWords(){
     let arr = [];
@@ -40,12 +42,13 @@ function numbersToWords(){
     }
     arr.push("mil");
     displaysTheNumbersOnThePage(arr);
+    createButtonExtraChallenge();
     return arr;
 }
 
 function displaysTheNumbersOnThePage(theNumbers){
     const mainContainer = document.getElementById("main");
-    
+
     for (let i = 0; i < theNumbers.length; i++){
         const p = document.createElement("p");
         p.innerText = (i+1) + ": " + theNumbers[i];
@@ -53,4 +56,24 @@ function displaysTheNumbersOnThePage(theNumbers){
     }
 }
 
+function createButtonExtraChallenge(){
+    const button = document.createElement("button");
+    const header = document.getElementById("header");
+    button.id = "buttonExtraChallenge";
+    button.innerText = "Desafio Extra";
+    header.appendChild(button);
+    button.addEventListener('click', extraChallenge);
+}
+
+function extraChallenge(){
+    const mainContainer = document.getElementById("main");
+    const countFixed = mainContainer.childElementCount
+    for (let i = 0; i < countFixed; i++){
+        mainContainer.removeChild(mainContainer.firstElementChild);
+    }
+    getADate(mainContainer);
+}
+
+
 numbersToWords();
+
